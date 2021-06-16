@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{conference_hansen_2013}
+A.~Auger and N.~Hansen.
+\newblock Tutorial cma-es — evolution strategies andcovariance matrix
+  adaptation.
+\newblock GECCO’13, 7 2013.
+\newblock
+  \url{http://www.cmap.polytechnique.fr/~nikolaus.hansen/gecco2013-CMA-ES-tutorial.pdf}.
+
+\bibitem{hansen2016cma}
+N.~Hansen.
+\newblock The cma evolution strategy: A tutorial, 2016.
+
+\end{thebibliography}

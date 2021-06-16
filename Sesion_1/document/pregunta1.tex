@@ -1,1 +1,27 @@
 \subsubsection*{¿Como se ajusta el tamaño del paso?}
+El tamaño de cada paso $z$ se ajusta de la siguiente manera:
+\begin{enumerate}
+    \item Mediante el uso de un sigma promedio (\prom{\sigma}) se perturba mediante una variable aleatoria de tal manera que el desplazamiento de cada hijo esta definido en la ecuación \ref{eq:sigmal}.
+          \begin{equation}
+              \sigma_h = \prommath{\sigma} e^{\tau N(0,1)}
+              \label{eq:sigmal}
+          \end{equation}
+          donde $\tau$ esta definido para cada dimensión. El uso de la distribución normal es debido a que nos proporcionara valores isotropicos, lo cual nos favorecera en los puntos de busqueda.\cite{conference_hansen_2013}
+    \item A partir de la factorización de Cholesky de la matriz de Covarianza se obtiene la matriz triangular superior que efectuara una transformación a un vector aleatorio (ecuación \ref{eq:sl}). Cada componente del vector aleatorio esta basado en una distribución normal.
+          \begin{equation}
+              S_h = \text{Cholesky}(C)N(0,1)
+              \label{eq:sl}
+          \end{equation}
+          El término $S_h$ contiene la dirección acerca de donde se tiene que ir dirigiendo la solución. La razón de esto se encuentra en la matriz de covarianza, ya que mientras más cercano esten los hijos al mínimo global el espacio de exploración será menor.
+    \item  Al realizar el producto de $\sigma_h$ y $S_h$ (ecuación \ref{eq:zl}), obtendremos el desplazamiento y dirección del hijo con respecto el centro de exploración (elipsoide).
+          \begin{equation}
+              Z_h = \sigma_h S_h
+              \label{eq:zl}
+          \end{equation}
+    \item Al tener $\lambda$ número de hijos escogeremos los $\mu$ hijos tales que la diferencia con el mínimo global sea menor. Los cuales proporcionaran sus $S_h$ para modificar la matriz de covariancia de modo que en cada iteracción se aproximen a la solución.
+    \item El centro del espacio de exploración será desplazado siguiendo la ecuación \ref{eq:ynew}:
+          \begin{equation}
+              Y=Y+\prommath{z}
+              \label{eq:ynew}
+          \end{equation}
+\end{enumerate}

@@ -1,1 +1,21 @@
 \subsubsection*{¿Cómo se orienta la matriz de covarinza?}
+La definición de la matriz de covarianza es:
+\begin{equation*}
+    C= \begin{pmatrix}
+        Var(x_1)     & Cov(x_1,x_2) & \dots  & Cov(x_1,x_n) \\
+        Cov(x_2,x_1) & Var(x_2,x_2) & \dots  & Cov(x_2,x_n) \\
+        \vdots       & \vdots       & \vdots & \vdots       \\
+        Cov(x_n,x_1) & Cov(x_n,x_2) & \cdots & Var(x_n)
+    \end{pmatrix}
+\end{equation*}
+donde
+\begin{equation*}
+    Cov(x,y)= Cov(y,x)
+\end{equation*}
+por lo tanto, la matriz de covarianza es simetrica. Para este caso se tiene que los valores $x_1=X$ y $x_2=Y$, por lo que la matriz tendria la siguiente forma:
+\begin{equation*}
+    C=\begin{pmatrix}
+        Var(X)   & Cov(X,Y) \\
+        Cov(X,Y) & Var(Y)
+    \end{pmatrix}
+\end{equation*}
