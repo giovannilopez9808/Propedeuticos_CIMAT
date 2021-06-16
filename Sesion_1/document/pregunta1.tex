@@ -1,27 +1,57 @@
-\subsubsection*{¿Como se ajusta el tamaño del paso?}
+\section{¿Como se ajusta el tamaño del paso?}
 El tamaño de cada paso $z$ se ajusta de la siguiente manera:
 \begin{enumerate}
-    \item Mediante el uso de un sigma promedio (\prom{\sigma}) se perturba mediante una variable aleatoria de tal manera que el desplazamiento de cada hijo esta definido en la ecuación \ref{eq:sigmal}.
-          \begin{equation}
-              \sigma_h = \prommath{\sigma} e^{\tau N(0,1)}
-              \label{eq:sigmal}
-          \end{equation}
-          donde $\tau$ esta definido para cada dimensión. El uso de la distribución normal es debido a que nos proporcionara valores isotropicos, lo cual nos favorecera en los puntos de busqueda.\cite{conference_hansen_2013}
-    \item A partir de la factorización de Cholesky de la matriz de Covarianza se obtiene la matriz triangular superior que efectuara una transformación a un vector aleatorio (ecuación \ref{eq:sl}). Cada componente del vector aleatorio esta basado en una distribución normal.
-          \begin{equation}
-              S_h = \text{Cholesky}(C)N(0,1)
-              \label{eq:sl}
-          \end{equation}
-          El término $S_h$ contiene la dirección acerca de donde se tiene que ir dirigiendo la solución. La razón de esto se encuentra en la matriz de covarianza, ya que mientras más cercano esten los hijos al mínimo global el espacio de exploración será menor.
-    \item  Al realizar el producto de $\sigma_h$ y $S_h$ (ecuación \ref{eq:zl}), obtendremos el desplazamiento y dirección del hijo con respecto el centro de exploración (elipsoide).
-          \begin{equation}
-              Z_h = \sigma_h S_h
-              \label{eq:zl}
-          \end{equation}
-    \item Al tener $\lambda$ número de hijos escogeremos los $\mu$ hijos tales que la diferencia con el mínimo global sea menor. Los cuales proporcionaran sus $S_h$ para modificar la matriz de covariancia de modo que en cada iteracción se aproximen a la solución.
-    \item El centro del espacio de exploración será desplazado siguiendo la ecuación \ref{eq:ynew}:
-          \begin{equation}
-              Y=Y+\prommath{z}
-              \label{eq:ynew}
-          \end{equation}
+  \item Mediante el uso de un sigma promedio (\prom{\sigma}) se perturba mediante una variable aleatoria de tal manera que el desplazamiento de cada hijo esta definido en la ecuación \ref{eq:sigmal}.
+        \begin{equation}
+          \sigma_h = \prommath{\sigma} e^{\tau N(0,1)}
+          \label{eq:sigmal}
+        \end{equation}
+        donde $\tau$ esta definido para cada dimensión. El uso de la distribución normal es debido a que nos proporcionara valores isotropicos, lo cual nos favorecera en los puntos de busqueda.\cite{conference_hansen_2013_page_18}
+  \item A partir de la factorización de Cholesky de la matriz de Covarianza se obtiene la matriz triangular superior que efectuara una transformación a un vector aleatorio (ecuación \ref{eq:sl}). Cada componente del vector aleatorio esta basado en una distribución normal.
+        \begin{equation}
+          S_h = \text{Cholesky}(C)N(0,1)
+          \label{eq:sl}
+        \end{equation}
+        El término $S_h$ contiene la dirección acerca de donde se tiene que ir dirigiendo la solución. La razón de esto se encuentra en la matriz de covarianza, ya que mientras más cercano esten los hijos al mínimo global el espacio de exploración será menor.
+  \item  Al realizar el producto de $\sigma_h$ y $S_h$ (ecuación \ref{eq:zl}), obtendremos el desplazamiento y dirección del hijo con respecto el centro de exploración (elipsoide).
+        \begin{equation}
+          Z_h = \sigma_h S_h
+          \label{eq:zl}
+        \end{equation}
+  \item Al tener $\lambda$ número de hijos escogeremos los $\mu$ hijos tales que la diferencia con el mínimo global sea menor. El centro del espacio de exploración será desplazado siguiendo la ecuación \ref{eq:ynew}:
+        \begin{equation}
+          Y=Y+\prommath{z}
+          \label{eq:ynew}
+        \end{equation}
+        donde \prom{z} es el promedio de $z_\mu$ de los $\mu$ hijos.
+  \item Los cuales proporcionaran sus $S_h$ para modificar la matriz de covariancia de modo que en cada iteracción se aproximen a la solución (ecuacion \ref{eq:Cnew}).
+        \begin{equation}
+          C= \left(1-\frac{1}{\tau_e} \right) C + \frac{1}{\tau_e} \prommath{ss^T}
+          \label{eq:Cnew}
+        \end{equation}
+        donde
+        \begin{equation*}
+          \prommath{ss^T} =\frac{1}{\mu} \sum_{i=1}^\mu s_is_i^T
+        \end{equation*}
+        $s_is_i^T$ es una matriz de tamaño $nxn$ donde n es la dimensión de la función donde se encontrará el mínimo local. Analizando más a la suma de matrices $s_is_i^T$ se encuentra que son simetricas ya que cada una se ellas lo es y su suma preserva esta caracteristica. Ejemplo:\\
+        Sea:
+        \begin{equation*}
+          s=\begin{pmatrix}
+            1 \\ 2 \\ 3
+          \end{pmatrix}
+        \end{equation*}
+        entonces:
+        \begin{align*}
+          ss^T & = \begin{pmatrix}
+            1 \\ 2 \\ 3
+          \end{pmatrix}\begin{pmatrix}
+            1 & 2 & 3
+          \end{pmatrix} \\
+               & = \begin{pmatrix}
+            1 & 2 & 3 \\
+            2 & 4 & 6 \\
+            3 & 6 & 9
+          \end{pmatrix}
+        \end{align*}
+        y como la matriz de covariancia también es simetrica, entonces la combinación lineal de C y \prom{ss^T} también es simetrica.
 \end{enumerate}

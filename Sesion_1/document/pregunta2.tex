@@ -1,21 +1,17 @@
-\subsubsection*{¿Cómo se orienta la matriz de covarinza?}
-La definición de la matriz de covarianza es:
-\begin{equation*}
-    C= \begin{pmatrix}
-        Var(x_1)     & Cov(x_1,x_2) & \dots  & Cov(x_1,x_n) \\
-        Cov(x_2,x_1) & Var(x_2,x_2) & \dots  & Cov(x_2,x_n) \\
-        \vdots       & \vdots       & \vdots & \vdots       \\
-        Cov(x_n,x_1) & Cov(x_n,x_2) & \cdots & Var(x_n)
-    \end{pmatrix}
-\end{equation*}
+\section{¿Cómo se orienta la matriz de covarinza?}
+El comportamiento de la elipse esta descrito en la ecuación \ref{eq:ynew}, esto es debido a que la podemos reescribir como la ecuacion \ref{eq:ydefinition}. \cite{conference_hansen_2013_page_25}
+\begin{equation}
+    Y= m+\sigma N(0,1)
+    \label{eq:ydefinition}
+\end{equation}
 donde
 \begin{equation*}
-    Cov(x,y)= Cov(y,x)
+    m = \sum_i^\mu w_i y_i
 \end{equation*}
-por lo tanto, la matriz de covarianza es simetrica. Para este caso se tiene que los valores $x_1=X$ y $x_2=Y$, por lo que la matriz tendria la siguiente forma:
+donde $w_i$ es conocido como peso, la cual es positiva. Para este caso, $w_i$ es el mismo valor para los $\mu$ mejores hijos.
 \begin{equation*}
-    C=\begin{pmatrix}
-        Var(X)   & Cov(X,Y) \\
-        Cov(X,Y) & Var(Y)
-    \end{pmatrix}
+    w_i = \frac{1}{\mu}
 \end{equation*}
+Como $\sigma$ de la ecuación \ref{eq:ydefinition} es calculada con la ecuación \ref{eq:sl} donde $S_h=\sigma$, entonces se trata de un problema con $(n^2+n)/2$ grados de libertad donde las componentes estas relacionadas.\cite{conference_hansen_2013_page_21}\\
+
+Por lo que la orientación de la matriz de covariancia es manipulado por la ecuación \ref{eq:Cnew}, donde la matriz \prom{ss^T} indica como cambiar su orientación ya que copntiene los pesos de cada hijo seleccionado.
