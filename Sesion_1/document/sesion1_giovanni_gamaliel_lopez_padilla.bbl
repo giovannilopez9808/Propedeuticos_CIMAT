@@ -1,29 +1,34 @@
 \begin{thebibliography}{1}
 
 \bibitem{conference_hansen_2013_page_18}
-A.~Auger and N.~Hansen.
-\newblock Tutorial cma-es — evolution strategies andcovariance matrix
-  adaptation, 7 2013.
+A.~Auger and N.~Hansen, ``Tutorial cma-es — evolution strategies
+  andcovariance matrix adaptation,'' 7 2013.
 \newblock pp 18.
   \url{http://www.cmap.polytechnique.fr/~nikolaus.hansen/gecco2013-CMA-ES-tutorial.pdf}.
 
 \bibitem{conference_hansen_2013_page_25}
-A.~Auger and N.~Hansen.
-\newblock Tutorial cma-es — evolution strategies andcovariance matrix
-  adaptation, 7 2013.
+A.~Auger and N.~Hansen, ``Tutorial cma-es — evolution strategies
+  andcovariance matrix adaptation,'' 7 2013.
 \newblock pp 25.
   \url{http://www.cmap.polytechnique.fr/~nikolaus.hansen/gecco2013-CMA-ES-tutorial.pdf}.
 
 \bibitem{conference_hansen_2013_page_21}
-A.~Auger and N.~Hansen.
-\newblock Tutorial cma-es — evolution strategies andcovariance matrix
-  adaptation, 7 2013.
+A.~Auger and N.~Hansen, ``Tutorial cma-es — evolution strategies
+  andcovariance matrix adaptation,'' 7 2013.
 \newblock pp 21.
   \url{http://www.cmap.polytechnique.fr/~nikolaus.hansen/gecco2013-CMA-ES-tutorial.pdf}.
 
+\bibitem{mei2021covariance}
+Y.~Mei and H.~Wang, ``Covariance matrix adaptation evolution strategy assisted
+  by principal component analysis,'' 2021.
+\newblock \url{https://arxiv.org/pdf/2105.03687.pdf}.
+
 \bibitem{hansen2016cma}
-N.~Hansen.
-\newblock The cma evolution strategy: A tutorial, 2016.
-\newblock https://arxiv.org/abs/1604.00772.
+N.~Hansen, ``The cma evolution strategy: A tutorial,'' 2016.
+\newblock \url{https://arxiv.org/abs/1604.00772}.
+
+\bibitem{CMA_page}
+``The cma evolution strategy.'' Accesido el día 15 de junio de 2021
+  \url{http://cma.gforge.inria.fr/}, 2016.
 
 \end{thebibliography}
