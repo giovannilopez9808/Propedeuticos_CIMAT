@@ -1,4 +1,5 @@
 import moviepy.video.io.ImageSequenceClip as Movie_maker
+from sklearn import linear_model, datasets
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import matplotlib as mpl
