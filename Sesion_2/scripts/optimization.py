@@ -247,11 +247,15 @@ class optimization_algorithm:
                 color="#d00000",
                 lw=1.5)
         ax.legend(frameon=False,
-                  ncol=3)
-        ax.view_init(17, -135)
+                  ncol=2)
+        ax.view_init(23, -20)
         ax.set_xlabel('$\\theta_1$')
         ax.set_ylabel('$\\theta_0$')
         ax.set_zlabel('Iteración', rotation=45)
+        plt.subplots_adjust(left=0,
+                            bottom=0,
+                            right=1,
+                            top=0.898)
 
     def create_animation(self):
         self.create_graphics()
@@ -298,7 +302,7 @@ gd_params = {'alpha': 0.05,
              'eta': 0.9,
              'eta1': 0.9,
              'eta2': 0.999,
-             'eta1NADAM': 0.75,
+             'eta1NADAM': 0.99,
              'eta2NADAM': 0.899}
 optimization = optimization_algorithm(theta,
                                       gd_params)
