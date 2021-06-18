@@ -41,9 +41,9 @@ def draw_results(algo_name, path, V, E, env, bounds, object_radius, resolution, 
         path_length2 += euclidian_dist(pruningPath[i], pruningPath[i+1])
 
     # Create title with descriptive information based on environment, path length, and elapsed_time
-    title = algo_name + "\nPath Length: " + \
-        str([path_length1, path_length2]) + \
-        "\n Runtime(s)= " + str(elapsed_time)
+    title = "{}\nPath Length: {}\nRuntime(s)= {}".format(algo_name,
+                                                         path_length1,
+                                                         elapsed_time)
 
     # Plot environment
     fig = plt.figure()
@@ -63,6 +63,7 @@ def draw_results(algo_name, path, V, E, env, bounds, object_radius, resolution, 
 
     # Plot path
     plot_path(env_plot, originalPath, object_radius, 'black', iteration)
+    plt.show()
     #plot_path(env_plot, pruningPath, object_radius, 'red')
 
 
@@ -126,9 +127,9 @@ def draw_animation(algo_name, path, V, E, env, bounds, object_radius, resolution
         plot_poly(env_plot, buffered_start_vertex, 'red')
 
         # Plot Edges explored by ploting lines between each edge
-        for edge in E:
-            line = LineString([edge[0], edge[1]])
-            plot_line(env_plot, line)
+        # for edge in E:
+        #     line = LineString([edge[0], edge[1]])
+        #     plot_line(env_plot, line)
 
         # Plot path
         plot_path(env_plot,

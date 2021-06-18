@@ -32,4 +32,3 @@ path = sbpp.RRT(environment,
                 resolution,
                 drawResults,
                 runForFullIterations)
-plt.show()

@@ -108,8 +108,8 @@ class RRTPlanner():
         if path and drawResults:
             draw_results("RRT", path, self.V, self.E, environment, bounds,
                          object_radius, resolution, start_pose, goal_region, elapsed_time, len(self.V))
-            draw_animation("RRT", path, self.V, self.E, environment, bounds,
-                           object_radius, resolution, start_pose, goal_region, elapsed_time)
+            # draw_animation("RRT", path, self.V, self.E, environment, bounds,
+            #                object_radius, resolution, start_pose, goal_region, elapsed_time)
 
         return path
 
