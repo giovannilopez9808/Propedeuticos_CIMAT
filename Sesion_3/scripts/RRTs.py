@@ -106,8 +106,10 @@ class RRTPlanner():
                 elapsed_time = time.time() - start_time
 
         if path and drawResults:
+            size, _ = path
+            size = len(size)-1
             draw_results("RRT", path, self.V, self.E, environment, bounds,
-                         object_radius, resolution, start_pose, goal_region, elapsed_time, len(self.V))
+                         object_radius, resolution, start_pose, goal_region, elapsed_time, size)
             draw_animation("RRT", path, self.V, self.E, environment, bounds,
                            object_radius, resolution, start_pose, goal_region, elapsed_time)
 

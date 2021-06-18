@@ -80,6 +80,8 @@ def plot_path(env_plot, path, object_radius, colorset, iteration):
                   linewidth=3,
                   solid_capstyle='round',
                   zorder=1)
+    circle = plt.Circle((x[iteration], y[iteration]), 0.25)
+    env_plot.add_artist(circle)
 
 
 def draw_animation(algo_name, path, V, E, env, bounds, object_radius, resolution, start_pose, goal_region, elapsed_time):
@@ -116,7 +118,7 @@ def draw_animation(algo_name, path, V, E, env, bounds, object_radius, resolution
     for i in range(len(pruningPath)-1):
         path_length2 += euclidian_dist(pruningPath[i], pruningPath[i+1])
     fig = plt.figure()
-    for iteration in range(1, path_size+2):
+    for iteration in range(1, path_size):
         # Plot environment
         env_plot = plot_environment(fig, env, bounds)
         # Plot goal
