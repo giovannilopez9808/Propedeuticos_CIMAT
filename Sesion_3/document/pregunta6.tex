@@ -1,0 +1,56 @@
+\section{¿Es la ecuación de transición de estados un DDR igual a la de un robot tipo automovil? Justifique su respuesta.}
+Visualmente las dos ecuaciones son semejantes ya que pueden ser reducidas a la siguiente expresión:
+\begin{equation*}
+    \begin{pmatrix}
+        \dot{x} \\
+        \dot{y} \\
+        \dot{\theta}
+    \end{pmatrix} =
+    \begin{pmatrix}
+        cos(\theta) & 0 \\
+        sin(\theta) & 0 \\
+        0           & 1
+    \end{pmatrix} \begin{pmatrix}
+        u_1 \\
+        u_2
+    \end{pmatrix}
+\end{equation*}
+pero el robot tipo caro y DDR tienen diferente definición para $u_i$, las cuales son:\\
+
+\begin{minipage}{0.5\linewidth}
+    \begin{center}
+        Robot tipo carro
+    \end{center}
+    \begin{align*}
+        u_1 & = vcos(\phi) \\
+        u_2 & = vsin(\phi)
+    \end{align*}
+    donde
+    \begin{itemize}
+        \item $\phi$: Ángulo de giro de las ruedas.
+        \item $v$: Es la velocidad.
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \begin{center}
+        DDR
+    \end{center}
+    \begin{align*}
+        \begin{pmatrix}
+            u_1 \\
+            u_1
+        \end{pmatrix} = \begin{pmatrix}
+            v \\
+            \omega
+        \end{pmatrix} = \begin{pmatrix}
+            \frac{\omega_l+\omega_r}{2} \\
+            \frac{\omega_l-\omega_r}{2b}
+        \end{pmatrix}
+    \end{align*}
+    donde
+    \begin{itemize}
+        \item $\omega_l$: Es la velocidad radial de la rueda.
+        \item $\omega_r$: Es la velocidad angular de la rueda.
+    \end{itemize}
+\end{minipage}
+en los dos casos comparten que $\theta$ es el ángulo de giro del carro. Al tener esta diferencia en la definición de las $u_i$ las ecuaciones de transicion de los casos son distintos.

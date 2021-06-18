@@ -1,0 +1,7 @@
+\section{Describa y explique el algoritmo del RRT\textsuperscript{*} e indique las diferencias principales con el RRT estandar}
+Los principios del algoritmo RRT\textsuperscript{*} estan basados en el algoritmo RRT, la diferencia radica en dos condiciones añadidas.
+\begin{enumerate}
+    \item El algoritmo RRT\textsuperscript{*} guarda la información acerca de la distancia entre nodos, a lo que definen como costo.
+    \item Una vez que se tiene un camino fijo, se va examinando y buscando puntos que se encuentran en el espacio libre de colisiones que tengan un costo menor al encontrado anteriormente.
+\end{enumerate}
+Con estas nuevas condiciones el algoritmo RRT\textsuperscript{*} encuentra un camino más eficiente en cuestión de la definición del costo en comparación del RRT. En el caso de un espacio euclideo, el algoritmo RRT\textsuperscript{*} siempre encontrará lineas rectas.
