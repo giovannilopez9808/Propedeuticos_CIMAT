@@ -2,7 +2,6 @@
 Parts of the code in this file are from https://github.com/yrouben/Sampling-Based-Path-Planning-Library. Thanks for the coder yrouben.
 """
 from __future__ import division
-import moviepy.video.io.ImageSequenceClip as Movie_maker
 from shapely.geometry import Polygon
 from environment import Environment
 from RRTs import RRTPlanner
