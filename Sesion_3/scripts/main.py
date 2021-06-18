@@ -9,7 +9,7 @@ from RRTs import RRTPlanner
 from matplotlib import pyplot as plt
 
 
-environment = Environment('bugtrap.yaml')
+environment = Environment('organization_1.yaml')
 bounds = (-2, -3, 12, 8)
 start_pose = (2, 2.5)
 goal_region = Polygon([(10, 5), (10, 6), (11, 6), (11, 5)])
